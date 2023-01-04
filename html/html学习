@@ -1,0 +1,155 @@
+html学习
+
+采用lang 声明当前文档语言
+	使用方法<html lang="en">
+	en定义为英文
+	zh-CN定义为中文
+
+标题标签
+	<h1>-</h1>
+	    .
+	    .
+	<h6>-</h6>
+
+段落标签
+	<p></p>
+	
+换行标签
+	<br/>
+
+格式化标签
+	<b></b>  加粗
+	<i></i>  斜体
+	<s></s>  删除线
+	<u></u>  下划线
+
+盒子标签
+	<div></div>一般单独占一行
+	<span></span> 一行可以放多个span
+
+图像标签
+	<img src="">
+		属性：
+			src     图片路径
+			alt		文本  图像不能显示时的文本
+			title	文本  鼠标放上时的文字
+			width	像素  宽度
+			height	像素  高度
+			border	像素  边框粗细
+			
+超链接标签
+	<a href="跳转目标" target="目标窗口的弹出方式 默认self为本窗口，blank为新窗口"></a>
+	如果href后面是个文件或者压缩包，则会现在这个文件或者压缩包
+
+锚点超链接
+	<a href="#111">去往111</a>
+	然后使用id标签 <h1 id = 111>这是111</h1> 
+
+特殊字符标签
+	空格<nbsp>
+
+表格标签
+	<table>
+		<thead>
+		<tr>
+			<th>表头单元格</th>   表头单元格会居中加粗显示
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>单元格内的文字</td>
+		</tr>
+		</tbody>
+	</table>
+	table属性
+		align  left、center、right 	规定表格周围元素的对齐方式
+		border 1或""  			   	规定表格单元是否有边框 默认""没有边框
+		cellpadding  像素			规定单元边缘与其内容之间的空白
+		cellspacing  像素			规定单元格之间的空白
+		width		 像素或百分比		规定表格的宽度
+		height		 像素或百分比		规定表格高度
+	合并单元格
+		跨行合并：rowspan="合并单元格的个数"
+		跨列合并：colspan="合并单元格的个数"
+
+列表标签
+	无序列表
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+	有序列表
+		<ol>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+
+	自定义列表
+		<dl>
+			<dt></dt>
+			<dd></dd>
+			<dd></dd>
+		</dl>
+
+表单标签  由表单域、表单控件和提示信息组成
+	<form action="url" method="提交方式 get或post" name="名称">
+		各种表单控件
+	</form>
+
+	表单控件
+		<input type="属性值" name="自定义" value="自定义" checked="checked 规定首次加载时应当被选中" maxlength="正整数 规定字符的最大长度">  输入标签 不同的type可以允许有不同的类型输入
+			属性：
+				button 		按钮 可用于启动js
+				checkbox 	复选框
+				file 		文件上传
+				hidden 		隐藏的输入字段
+				image 		图像形式提交按钮
+				password 	密码字段 掩码输入
+				radio 		单选按钮    要实现多选一  将需要多选一的表单使用相同的name即可
+				reset 		重置按钮 清除表单所有数据	
+				submit 		提交按钮 把表单内数据发送至服务器
+				text 		单行的输入字段
+
+			<lable>标签  用于绑定表单元素，当点击lable标签内的文本时，浏览器就会自动将光标转到或者选择对应的表单元素上去    
+			语法：
+				<lable for="ceshi">男性</lable>
+				<input type="radio" name="sex" id="ceshi" />
+				lable标签中的for属性对应相关元素的id属性
+
+		下拉标签
+		<select>	
+			<option>选项1</option>
+			<option selected="selected 即默认选择此项">选项2</option>
+		</select>
+
+		多行文本标签
+		<textarea rows="2" cols="30">即2行每行30个字符
+		文本内容
+		</textarea>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

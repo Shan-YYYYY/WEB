@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+        <li id="first">列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li id="last">列表项4</li>
+    </ul>
+
+    <script>
+        var ul = document.getElementById("ul");
+        var li1 = document.getElementById("first");
+        var li4 = document.getElementById("last");
+
+        ul.removeChild(li1)
+
+        var replaceLi = document.createElement("li");
+        replaceLi.innerHTML = "列表4的替换";
+        ul.replaceChild(replaceLi, last);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!-- 当窗口失去焦点输出窗口失去焦点
+当窗口获得焦点输出获得焦点
+即系列窗口事件测试 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>窗口事件测试</h1>
+    <script>
+        window.onblur = function () {
+            console.log("窗口失去焦点")
+        };//失去焦点输出窗口失去焦点
+
+        window.onfocus = function () {
+            console.log("窗口获得焦点")
+        };//获得焦点输出窗口获得焦点
+
+        window.onload = function () {
+            console.log("Hello,World!!!")
+        };//当页面加载完成输出Hello,World！！！
+
+        window.onresize = function () {
+            console.log("窗口大小正在改变")
+        };//当改变窗口大小时输出窗口大小正在改变
+    </script>
+</body>
+
+</html>

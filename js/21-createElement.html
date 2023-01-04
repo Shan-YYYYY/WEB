@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>test</h1>
+    <script>
+        var ul = document.createElement("ul");
+
+        var li1 = document.createElement("li");
+        var text1 = document.createTextNode("列表1");
+        li1.appendChild(text1);
+        ul.appendChild(li1);
+
+        var li2 = document.createElement("li")
+        var text2 = document.createTextNode("列表2");
+        li2.appendChild(text2);
+        ul.appendChild(li2);
+
+        var li3 = document.createElement("li")
+        var text3 = document.createTextNode("列表3");
+        li3.appendChild(text3);
+        ul.appendChild(li3);
+
+        var li4 = document.createElement("li")
+        var text4 = document.createTextNode("列表4");
+        li4.appendChild(text4);
+        ul.appendChild(li4);
+
+        document.getElementsByTagName("body")[0].appendChild(ul);
+
+    </script>
+</body>
+
+</html>

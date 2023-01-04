@@ -1,0 +1,125 @@
+css层叠样式表
+	选择器 {
+		属性：值；
+		属性：值；
+	}
+
+	css选择器
+		基础选择器
+			标签选择器
+				p {
+					color: green;
+				}
+				div {
+
+				}
+				把一类标签全部选择出来，无法差异化
+
+			类选择器
+				可以单独选择一个或者某几个标签
+				.类名 {
+					属性1:属性值:
+				}
+				.red {
+					color: red;
+				}
+				然后使用class标签调用类
+				<div class="red"></div>
+
+			id选择器
+				#id名 {
+					属性1:属性值:
+				}
+				#nav {
+					color:red;
+				}
+				<div id="nav">测试</div>
+				每个id选择器的id只能在每个HTML中出现一次,也只能被调用一次
+
+			通配符选择器
+				* {
+					属性1:属性值:
+				}		
+				通配符会将页面中的所有标签都选择同时更改所有的标签
+
+		复合选择器
+			后代选择器
+				选择父类中的所有后代类选择器
+					元素1 元素2 {样式声明}      注:元素1 和元素2 可以是任何基础选择器
+					ul li { 样式声明}
+
+			子选择器
+				选择父类中的最近一级子类选择器   
+					元素1 > 元素2 {样式声明}
+
+			并集选择器
+				同时对多个标签,更改相同的样式,用于集体声明,任何选择器都可作为并集选择器的一部分
+					元素1 , 
+					元素2 {样式声明}
+			伪类选择器
+				向某些选择器添加特殊效果,比如给连接添加特殊效果 最大书写特点是用冒号表示
+					连接伪类选择器
+						a:link 选择所有未被访问过的连接 a:link{ color: #333}
+						a:visited 选择所有已被访问的连接 a:visited{ color:}
+						a:hover 选择鼠标指针位于其上的连接 a:hover{ }
+						a:active 选择活动连接(鼠标按下未弹起的连接) a:active{ }
+					
+					:focus伪类选择器
+						用于选取获得焦点的表单元素
+							input:focus{ background-color: red} 把获得光标的input表单的背景改为红色
+
+	css文字属性
+		字体系列
+			font-family:"微软雅黑"
+			font-size:20px
+			font-weight:normal/bold/bolder/lighter 或者直接数字
+			font-style:normal/italic(斜体) 
+			复合书写：
+				font: style weight size/line-height family; 依次不能换位 除了size和family其余可以省略
+
+		文本属性
+			文本颜色
+				color:red;
+			对齐文本
+				text-aligen:center/left/right;
+			装饰文本
+				text-decoration:none(不带线)/underline(下划线)/overline(上划线)/line-through(删除线)
+			文本缩进
+				text-indent:10px/2em(当前2个文字大小);
+			行间距
+				line-height:26px;
+
+	CSS引入方式
+		内部样式表
+		行内样式表
+		外部样式表
+			使用<link rel="stylesheet" href="css文件路径">添加到head标签
+	
+	Emmet语法生成标签
+		div*3
+		ul>li
+		div+p
+		.demo
+		.demo$3
+
+	CSS的元素显示模式
+		HTML元素一般分为行内元素和块元素
+		块级元素
+			独占一行
+			可以设置宽度和高度
+			宽度默认是父类的宽度
+			是一个容器，可以存放行内或者块级元素
+		
+		行内元素
+			相邻行内元素在一行上，一行可以显示多个
+			高宽直接设置是无效的
+			默认宽度是它本身内容的宽度
+			行内元素只能容纳文本或其他行内元素
+
+
+
+
+
+
+
+

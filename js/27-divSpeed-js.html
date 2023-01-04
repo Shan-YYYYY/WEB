@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" style="width :100px;height: 100px;background:red;position:absolute;"></div>
+    <script>
+        var box = document.getElementById("box");
+
+        document.onkeydown = function (event) {
+            event = event || window.event;
+
+            var speed = 50;
+
+            switch (event.keyCode) {
+                case 37:
+                    box.style.left = box.offsetLeft - speed + "px";
+                    console.log("向左移动10px");
+                    break;
+                case 65:
+                    box.style.left = box.offsetLeft - speed + "px";
+                    console.log("向左移动10px");
+                    break;
+
+                case 39:
+                    box.style.left = box.offsetLeft + speed + "px";
+                    console.log("向右移动10px");
+                    break;
+                case 68:
+                    box.style.left = box.offsetLeft + speed + "px";
+                    console.log("向右移动10px");
+                    break;
+
+                case 38:
+                    box.style.top = box.offsetTop - speed + "px";
+                    console.log("向上移动10px");
+                    break;
+                case 87:
+                    box.style.top = box.offsetTop - speed + "px";
+                    console.log("向上移动10px");
+                    break;
+
+                case 40:
+                    box.style.top = box.offsetTop + speed + "px";
+                    console.log("向下移动10px");
+                    break;
+                case 83:
+                    box.style.top = box.offsetTop + speed + "px";
+                    console.log("向下移动10px");
+                    break;
+            }
+
+        };
+    </script>
+</body>
+
+</html>

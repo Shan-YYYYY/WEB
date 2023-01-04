@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+        <li id="first">列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+        <li>列表项4</li>
+    </ul>
+    <script>
+        var ul = document.getElementById("ul");
+        var li1 = document.getElementById("first");
+
+        var zero = document.createElement("li");
+        zero.innerText = "列表0的新增"
+
+        ul.insertBefore(zero, first);
+    </script>
+</body>
+
+</html>

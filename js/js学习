@@ -1,0 +1,846 @@
+JavaScript学习
+    js使用
+        标签引用
+            在HTML中的script中编写js代码
+            <script>
+                alert("Hello,World!")
+            </script>
+
+        文件引用
+            将js文件引入html中
+                <script src="01.js"></script>
+
+    js输出
+        页面输出
+            document.write("Hello,world!")
+    
+        控制台输出
+            comsole.log("输出一条日志")
+            comsole.info("输出一条信息")
+            comsole.warn("输出一条警告")
+            comsole.error("输出一条错误")
+
+        弹出窗口输出
+            alert("Hello,World!")
+
+    js注释
+        单行注释
+            //
+
+        多行注释
+            /* */
+
+JS基础语法
+
+    变量声明
+        var a;
+
+    变量赋值
+        a = 123;
+
+    变量声明和赋值
+        var a = 123;
+
+    数据类型分类
+        字符串型(String)        
+        数值型(Number)
+        布尔型(Boolean)
+        undefined型(Undefined)
+        null型(Null)
+        除此之外的都称为Object
+
+    检测变量数据类型
+        typeof 数据
+
+    String 
+        String 用于表示字符串 需要用单引号或者双引号括起来
+
+    转义字符
+        \n 换行 
+        \t 制表符
+        \b 空格
+        \r 回车
+        \\ 斜杠
+        \' 单引号  '
+        \" 双引号 "
+        
+    Number 类型
+        用于表示整数和浮点数 
+        最大值：+1.7976931348623157e+308
+        最小值: -1.7976931348623157e+308
+        
+        特殊字符：
+            Infinity: 正无穷
+            -Infinity: 负无穷
+            NaN: 非法数字
+
+        二进制: 0b开头
+        八进制: 0开头
+        十六进制: 0x开头
+
+    Boolean类型
+        只支持真和假两种
+
+    undefined型
+        undefined型只有一个值就是undefined 表示使用var声明后未初始化的变量
+
+    null型
+        只有一个值为null 表示空
+
+    强制类型转化
+        转换为str类型
+            toString()
+                var a = 123;
+                a = a.toString();
+
+            String()
+                var a = 123;
+                a = String(a);
+
+            拼串
+                var a = 123;
+                a = a + "";
+
+        转换为Number
+            使用Number函数
+                var a = str;
+                a = Number(a);
+
+            使用parselent()把一个字符串转化为一个整数
+                var a = "123";
+                a = parsenInt(a);
+
+            使用parseFloat()把一个字符串转化为一个浮点数
+                var a = "123";
+                a = parsentFloat(a);
+
+        转化为Boolena类型
+            使用Boolean()函数
+
+    运算符
+        算术运算符
+            同java
+
+        关系运算符
+            同java
+
+        赋值运算符
+            同java
+        
+        逻辑运算符
+            同java
+        
+        比较运算符
+            == 用于相等运算 比较两个值 当两个值类型不同时自动进行类型转化
+            != 用于不相等运算 同样会进行类型转化
+            === 全等运算 不同于== 全等 运算不会进行类型转化 如果类型不同直接返回false
+            !== 全不等运算 类似全等 当两者类型不同时直接返回true
+
+        条件运算符
+            语法: variablename=(condition)?value1:value2;
+            举例: resule=(age<18)?"年龄太小""年龄合适";
+            执行流程: 如果condition为true,则执行语句1 并返回执行结果,如果为false,则执行语句2 并返回执行结果
+
+        逗号运算符
+            使用逗号可以在一条语句中执行多次操作
+            如: var num1 = 1,num2 = 2,num3 = 3;
+
+    条件语句
+        if...else
+            if(){
+
+            }
+
+            if(){
+
+            }else{
+
+            }
+        
+            if(){
+
+            }else if(){
+
+            }else{
+
+            }
+
+        switch...case
+            switch(){
+                case 表达式1 
+                case 表达式2
+                default
+            }
+
+    循环语句
+        while
+            while(){
+
+            }
+
+        do...while
+            do{
+
+            }while();
+
+        for  同java
+            for(;;){
+
+            }
+
+        break和continue 同java
+
+    对象基础
+        创建对象
+            1.
+                var person = new Object();
+                person.name = "人物1"
+                person.age = 18;
+                console.log(person);
+            2.
+                var person = {
+                        name:"人物1"
+                        age:18
+                };
+                console.log(person);
+
+        访问属性
+            访问属性的两种方式
+                1 对象.属性名
+                2 对象['属性名']
+        删除属性
+            delete 对象.属性名
+
+        遍历对象
+            一般使用for循环遍历对象
+                for(var 变量 in 对象){
+
+                }
+
+        js中复制变量时,仅仅只是将变量的引用复制到新变量中,并不是创建一个新对象
+        因此 这时两个变量指向的是同一个对象 改变其中一个也会影响到另一个
+
+        js类似于java采用堆栈保存数据
+            栈空间用来保存变量和基本类型  堆空间用于保存变量
+            如果是基本类型则是在栈空间中直接保存 如果是引用类型变量则是在堆空间保存
+            变量中保存的其实是堆空间中的一个地址  复制变量只会复制地址 不会在堆空间中开辟新的地址
+
+    函数
+        函数的创建
+            函数对象创建法
+            1. var 函数名 = new Function("执行语句");
+               var fun = new Function("comsole.log('这是第一个函数');");
+            
+            函数声明创建法(常用)
+            2. function 函数名([形参1,形参2...]){
+                语句...
+            }
+
+            函数表达式创建(常用)
+            3. var 函数名 = function([形参1,形参2...]){
+                语句...
+            }
+
+        函数的调用
+            无参函数的调用
+                // 函数声明
+                var fun = function () {
+                 console.log("哈哈，我执行啦！");
+                }
+
+                // 函数调用
+                fun();
+
+            有参函数调用
+                // 函数声明
+                var sum = function (num1, num2) {
+                    var result = num1 + num2;
+                    console.log("num1 + num2 = " + result);
+                }
+
+                // 函数调用
+                sum(10, 20);
+
+        函数的返回值
+            使用ruturn 返回参数 可以var个变量接受
+
+        嵌套函数
+            可以父函数套用子函数 子函数仅在父函数中可以使用
+        
+        匿名函数
+            没有名字的函数就是匿名函数 可以让一个变量来接受
+            var fun = function () {
+                alert("我是一个匿名函数");
+            }
+
+            fun();
+
+        立即执行函数
+            函数定义完 立即被调用 这种函数叫做立即执行函数 立即执行函数之后执行一次
+            (function () {
+                alert("我是一个匿名函数");
+            })();
+
+        this对象
+            当以函数的形式调用时 this永远都是window
+            当以方法的形式调用时, this就是调用方法的那个对象
+            当以构造函数的形式调用时,this就是新创建的那个对象
+
+    对象进阶
+        用工厂的方法创建对象   工厂类似于java中的类 类与对象
+                 // 使用工厂模式创建对象
+                 function createPerson(name, age) {
+                    // 创建新的对象
+                    var obj = new Object();
+                    // 设置对象属性
+                    obj.name = name;
+                    obj.age = age;
+                    // 设置对象方法
+                    obj.sayName = function () {
+                        console.log(this.name);
+                    };
+                    //返回新的对象
+                    return obj;
+                 }
+
+                var person1 = createPerson("孙悟空", 18);
+                var person2 = createPerson("猪八戒", 19);
+                var person3 = createPerson("沙和尚", 20);
+
+                console.log(person1);
+                console.log(person2);
+                console.log(person3);
+
+        用构造函数创建对象
+            // 使用构造函数来创建对象
+            function Person(name, age) {
+                // 设置对象的属性
+                this.name = name;
+                this.age = age;
+                // 设置对象的方法
+                this.sayName = function () {
+                    console.log(this.name);
+                };
+            }
+
+            var person1 = new Person("孙悟空", 18);
+            var person2 = new Person("猪八戒", 19);
+            var person3 = new Person("沙和尚", 20);
+
+            console.log(person1);
+            console.log(person2);
+            console.log(person3);
+
+        原型
+            为了防止影响全局函数 同时为方便 同一类调用同一个方法而设置
+            在创建构造函数时将这些对象共有的属性和方法 统一添加到构造函数的原型对象中
+            这样不用分别为每一个对象添加 也不会影响到全局作用域 就可以使这些对象都具有这些属性和方法了
+
+        原型链
+            每一个对象都有其对应的原型对象 原型对象也有原型对象 当使用一个对象的属性
+            或者方法时如果本身没有就会去他的原型对象中寻找 如果原型对象中没有就去原型
+            对象的原型对象去寻找一直找到Object对象 Object对象的原型没有原型 因此如果
+            还是没有就返回 undefined 
+
+        toString方法
+            toSreing()函数用于将当前对象以字符串的形式返回,该方法属于Object对象,由于所有的对象都
+            继承了Object的对象实例,因此几乎所有的实例对象都可以使用该方法,所有的主流浏览器均支持
+            该函数.    
+
+        hasOwnProperty方法
+            用于检测自身对象是否含有某个方法或属性,可以使用Object的hasOwnProperty()方法,它返回一个布尔值,
+            判断对象是否包含特定自身(非继承)属性
+            语句:实例.hasOwnProperty("方法")
+
+        对象继承
+            原型链继承
+                见03-prototype-constructor.js
+            构造函数继承
+                见04-call-jc.js
+            组合继承
+                见05-call-mix-prototype.js
+
+        垃圾回收
+            js自动对不再使用的垃圾对象进行回收销毁,我们不需要也不能对垃圾回收进行操作 我们只需要将不再使用的对象设置为null即可
+        
+    作用域
+        全局作用域
+        局部作用域
+
+    数组对象
+        创建数组
+            一个数组中使用同类型不同类型的数据均可
+            方法一：
+            var arr = new Array();
+            arr[0] = 1;
+            arr[1] = 2;
+            arr[2] = "3";
+
+            方法二：
+            var arr = [1,2,3,4,"5","6",7];
+        
+        遍历数组(同java)
+            for(var i = 0;i < arr.length;i++){
+                console.log(arr[i]);
+            }
+
+        数组方法
+            push()方法 可向数组的末尾添加一个或多个元素 并返回数组的新长度
+            var arr = [1,2,3,4];
+            var result = arr.push(5,6,7,8);
+            console.log(arr);
+            console.log(result);
+            结果为:[1,2,3,4,5,6,7,8]  8
+
+            pop()方法 该方法可以删除数组的最后一个元素 并将删除的元素作为返回值返回
+            var arr = [1,2,3,4];
+            var result = arr.pop();
+            console.log(arr);
+            console.log(result);
+            结果为:[1,2,3] 4
+ 
+            unshift()方法 该方法可以向数组开头添加一个或多个元素 并返回新的数组长度
+            var arr = [1,2,3,4];
+            var result = arr.unshift(-1,0);
+            console.log(arr);
+            console.log(result);
+            结果为 [-1,0,1,2,3,4] 6
+
+            shift()方法 该方法可以删除数组的第一个元素 并将删除的元素作为返回值
+            var arr = [1,2,3,4];
+            var result = arr.shift();
+            console.log(arr);
+            console.log(result);
+            结果为 [2,3,4] 1
+
+            slice()方法 该方法用来从数组中提取指定元素 该方法不会改变元素数组 而是将截取到的元素封装到一个新的数组中返回
+            该方法输入两个参数 第一个参数用于截取开始位置的索引包含开始索引 第二个参数用于截取结束位置的索引不包括结束位置
+            类似python
+            var arr = [1,2,3,4,5];
+            var result = arr.slice(1,4);// [2.3.4]
+            result = arr.slice(1);// [2.3.4.5]
+
+            splice()方法 该方法用于删除数组中的指定元素 该方法会影响原数组 会将指定元素从原数组中删除 并将被删除的元素作为返回值返回
+            参数
+                参数一 表示开始位置的索引
+                参数二 表示要删除元素的数量
+                参数三及之后 可用于传递一些新元素 这些元素会自动插入到开始位置索引前
+            var arr = [1,2,3,4,5];
+            var result = arr.splice(3,2);// [1,2,3]
+
+            concat()方法 该方法可以连接两个或多个数组 并将新的数组返回 该方法不会对原数组产生影响
+            var arr1 = [1,2];
+            var arr2 = [3,4];
+            var result = arr1.concat(arr2,123,442,"测试");// [1,2,3,4,123,442,"测试"] 
+
+            join()方法:该方法可以将数组转化为一个字符串 该方法不会对原数组产生影响 将结果返回 可在()中指定连接符 若不指定则以默认,为连接符
+            var arr = [123,343,456];
+            var result = arr.jojn(-);
+            console.log(result); 123-343-456 
+
+            reverse() 方法 反转数组 直接修改原数组
+            var arr = [1,2,3];
+            arr.reverse();
+            console.log(arr);  [3,2,1]
+
+            sort() 方法 自动排序 直接修改原数组 (由于采用Unicode编码排序 不建议对数字进行排序)
+            var arr = [3,5,2,7];
+            arr.sort();
+            console.log(arr);  [2,3,5,7]
+ 
+        函数对象
+            call()和apply()
+                call()方法演示：
+                    function fun(a, b) {
+                        console.log("a = " + a);
+                        console.log("b = " + b);
+                        console.log("fun = " + this);
+                    }
+
+                    var obj = {
+                        name: "obj",
+                        sayName: function () {
+                            console.log(this.name);
+                        }
+                    };
+
+                    fun(2, 3);
+                    console.log("===============");
+                    fun.call(obj, 2, 3);  区别
+                apply()方法演示：
+                    function fun(a, b) {
+                        console.log("a = " + a);
+                        console.log("b = " + b);
+                        console.log("fun = " + this);
+                    }
+
+                    var obj = {
+                        name: "obj",
+                        sayName: function () {
+                            console.log(this.name);
+                        }
+                    };
+
+                    fun(2, 3);
+                    console.log("===============");
+                    fun.apply(obj, [2, 3]);  区别 apply是需要实参组进行参数传递
+
+            this指向
+                以函数形式调用时 this 永远都是window
+                以方法的形式调用时 this就是调用方法的那个对象
+                以构造函数的形式调用时 this就是新创建的那个对象
+                使用call和apply调用时 this是传入的那个指定的对象
+
+            arguments参数
+                是一个类数组对象 可以通过下标访问也可以通过length访问长度
+                arguments参数是存放传递进函数的实参的类数组
+
+        Date对象
+            JS中使用Date对象来表示时间
+                var date = new Date();
+                console.log(date);
+
+                console.log(date.getFullYear());//获取当前日期对象的年份(四位数字年份)
+                console.log(date.getMonth());//获取当前日期对象的月份(0 ~ 11)
+                console.log(date.getDate());//获取当前日期对象的日数(1 ~ 31)
+                console.log(date.getHours());//获取当前日期对象的小时(0 ~ 23)
+                console.log(date.getMinutes());//获取当前日期对象的分钟(0 ~ 59)
+                console.log(date.getSeconds());//获取当前日期对象的秒钟(0 ~ 59)
+                console.log(date.getMilliseconds());//获取当前日期对象的毫秒(0 ~ 999)
+
+        Math对象
+            /*固定值*/
+                console.log("PI = " + Math.PI);
+                console.log("E  = " + Math.E);
+                console.log("===============");
+            
+            /*正数*/
+                console.log(Math.abs(1));        //可以用来计算一个数的绝对值
+                console.log(Math.ceil(1.1));     //可以对一个数进行向上取整，小数位只有有值就自动进1
+                console.log(Math.floor(1.99));   //可以对一个数进行向下取整，小数部分会被舍掉
+                console.log(Math.round(1.4));    //可以对一个数进行四舍五入取整
+                console.log("===============");
+            
+            /*负数*/
+                console.log(Math.abs(-1));       //可以用来计算一个数的绝对值
+                console.log(Math.ceil(-1.1));    //可以对一个数进行向上取整，小数部分会被舍掉
+                console.log(Math.floor(-1.99));  //可以对一个数进行向下取整，小数位只有有值就自动进1
+                console.log(Math.round(-1.4));   //可以对一个数进行四舍五入取整
+                console.log("===============");
+            
+            /*随机数*/
+                //Math.random():可以用来生成一个0-1之间的随机数
+                //生成一个0-x之间的随机数:Math.round(Math.random()*x)
+                //生成一个x-y之间的随机数:Math.round(Math.random()*(y-x)+x)
+                console.log(Math.round(Math.random() * 10));            //生成一个0-10之间的随机数
+                console.log(Math.round(Math.random() * (10 - 1) + 1));  //生成一个1-10之间的随机数
+                console.log("===============");
+            
+            /*数学运算*/
+                console.log(Math.pow(12, 3));   //Math.pow(x,y)：返回x的y次幂
+                console.log(Math.sqrt(4));      //Math.sqrt(x) ：返回x的平方根
+
+        String对象
+            constructor 属性: 返回创建字符串对象的原型数组
+
+            length 属性: 获取字符串的长度
+
+            charAt()方法: 可以根据索引获取指定位置的字符
+                var str = "Hello world!";
+                console.log(str.charAt(1));   e
+
+            charCodeAt()方法: 获取指定位置的Unicode字符编码
+                console.log(str.charCodeAt(1));  101
+
+            concat方法 同数组concat方法 可以连接两个或多个字符串
+
+            indexof方法 该方法用于检索一个字符串中是否含有指定内容 如果有则返回第一次出现的索引 如果没有则返回-1 
+            可添加第二个参数用于指定开始查找的位置
+                console.log(str.indexof("o"));  4
+                console.log(str.indexof("o",5));  7
+
+            iaslndexOf()方法 和indexof方法类似 不过此方法是从后向前匹配
+
+            slice()方法 同数组的slice方法 根据参数从字符串中截取 不影响原字符串而是将截取的内容返回
+
+            split()方法 可将一个字符串拆分为一个数组 需要输入个字符串作为参数 然后根据此字符串拆分
+                var str = "Hello,World!";
+                var result = str.split(",");
+                console.log(result);  ["Hello","World!"]            
+
+            toUpperCase()方法 将一个字符串转化为大写并返回
+                console.log(str.toUpperCase()); HELLO,WORLD!
+
+        RegExp对象
+            创建正则对象
+                使用对象创建
+                    语法: var 变量名 = new ReExp("正则表达式","匹配模式"); 
+                    匹配模式 
+                        i   忽略大小写
+                        g   全局匹配模式
+                        ig  忽略大小写且全局匹配模式
+                    
+                    这个正则表达式用于检测目标字符串中是否含有指定字符串
+                    var reg = new RegExp("ab","i");
+                    var str = "Abc";
+                    var result = reg.test(str);
+                    console.log(result);  true
+
+                使用字面量创建
+                    语法: var 变量名 = /正则表达式/匹配模式;
+                    匹配模式
+                        i   忽略大小写
+                        g   全局匹配模式
+                        m   执行多行匹配
+                        注意 可以为一个正则表达式设置多个匹配模式 且顺序无所谓
+
+                    这个正则表达式用于检测目标字符串中是否含有指定字符串
+                    var reg = /a/i;
+                    var str = "Abc";
+                    var result = reg.test(str);
+                    console.log(result);  true
+
+            正则进阶
+                需求 创建一个正则表达式 检测一个字符串是否含有a或b
+                    使用 | 表示或者
+                    var reg = /a|b/i;
+                    var str = "Abc";
+                    var result = reg.test(str);
+                    console.log(result); true
+
+                需求 创建一个正则表达式 检测一个字符串中是否含有字母
+                    []里的内容也是或的关系
+                    var reg = /[A-z]/;
+                    var str = "Abc"
+                    var result = reg.test(str);
+                    console.log(result); true
+
+                常见组合
+                    [a-z] 任意小写字母 
+                    [A-Z] 任意大写字母
+                    [A-z] 任意字母
+                    [0-9] 任意数字
+                
+                需求 创建一个正则表达式 检测一个字符串是否含有abc或aec或adc
+                    var reg = /a[bed]c/;
+                    var str = "abc123";
+                    var result = reg.test(str);
+                    console.log(result);  true
+
+                常见组合
+                    [^a-z] 除了任意小写字母
+                    [^A-Z] 除了任意大写字母
+                    [^A-z] 除了任意字母
+                    [^0-9] 除了任意数字
+
+                需求 创建一个正则表达式 检测一个字符串是否除了数字还有字母
+                    var reg = /[^0-9]/;
+                    var str = "0123456789";
+                    var result = reg.test(str);
+                    console.log(result);  flase
+
+            正则方法
+                split()方法演示：该方法可以将一个字符串拆分为一个数组，方法中可以传递一个正则表达式作为参数，
+                这样方法将会根据正则表达式去拆分字符串，这个方法即使不指定全局匹配，也会全都插分
+                    var str = "1a2b3c4d5e6f7";
+                    var result = str.split(/[A-z]/);
+                    console.log(result); ['1', '2', '3','4', '5', '6','7']
+
+                search()方法 该方法可以搜索字符串中是否含有指定内容，如果搜索到指定内容，则会返回第一次出现的索引，
+                如果没有搜索到返回-1,它可以接受一个正则表达式作为参数,然后会根据正则表达式去检索字符串,serach()只会查找第一个
+                    var str = "hello abc hello aec afc";
+                    var result = str.search(/a[bef]c/);
+                    console.log(result); 6
+
+                match()方法演示：该方法可以根据正则表达式，从一个字符串中将符合条件的内容提取出来
+                默认情况下我们的match()只会找到第一个符合要求的内容，找到以后就停止检索，我们可以设置正则表达式为全局匹配模式
+                这样就会匹配到所有的内容 可以为一个正则表达式设置多个匹配模式 且顺序无所谓 match()会将匹配到的内容封装到一个数组中返回
+                即使只查询到一个结果
+                    var str = "1a2a3a4a5e6f7A8B9C";
+                    var result = str.match(/[a-z]/ig);
+                    console.log(result); [ 'a', 'a', 'a','a', 'e', 'f','A', 'B', 'C']
+
+                replace()方法 该方法可以将字符串中指定内容替换为新内容 默认只替换第一个 但是可以设置为全局匹配
+                参数 
+                    一 被替换内容 可以接受一个正则表达式
+                    二 新内容
+                    var str = "1a2a3a4a5e6f7A8B9C";
+                    var result = str.replace(/[a-z]/ig,"@_@");
+                    console.log(result); 1@_@2@_@3@_@4@_@5@_@6@_@7@_@8@_@9@_@
+
+            正则量词
+                通过量词可以设置一个内容出现的次数 量词只对它前边的一个内容起作用 如果有多个内容可以使用()括起来
+                    {n}     正好出现n次
+                    {m,}    出现m次及以上
+                    {m,n}   出现m-n次
+                    +       至少一个 相当于{1,}
+                    *       0个或多个 相当于{0,}
+                    ?       0个或1个 相当于{0,1}
+
+            正则高阶
+                需要检测一个字符串是否由某个字符或某个字符序列开头或结尾时会使用^或$。
+                ^ 表示开头 例如：^a 表示以a开头的字符串
+                $ 表示结尾 例如: a$ 表示以a结尾的字符串
+
+                转义字符 
+                \. 表示 .
+                \\ 表示 \
+                \w 任意数字字母
+                \W 除了任意数字字母
+                \d 任意数字
+                \D 除了任意数字
+                \s 空格
+                \S 除了空格
+                \b 单词边界
+                \B 除了单词边界
+            
+    JS DOM 
+        DOM概述
+            DOM 即文档对象模型 js能对HTML中所有元素、属性、样式、事件进行增加、删除和改写
+
+        DOM文档节点
+            节点的概述
+                节点是构成网页的最基本组成部分，网页中的每个部分都可以看成是节点
+                分为四类
+                文档节点: 整个HTML文档
+                元素节点: HTML文档中的HTML标签
+                属性节点: 元素的属性
+                文本节点: HTML标签中的文本内容
+
+            文档节点
+                文档节点代表的是整个HTML文档, 网页中的所有节点都是它的子节点。
+                document对象作为window对象的属性存在的 我们不用获取可以直接使用
+                通过该对象我们可以在整个文档内访问查找节点对象, 并可以通过该对象创建各种节点对象
+
+            元素节点
+                HTML中各种标签都是元素节点 这也是我们最常使用的一个节点
+                浏览器会将页面中所有标签都转化为一个元素节点 我们可以通过document方法来获取元素节点
+                例如:document.getElementById(), 根据ID属性值获取一个元素节点对象
+
+            属性节点
+                属性节点指的是标签中的一个个属性, 属性节点并不是元素节点的子节点 而是元素节点的一部分
+
+            文本节点    
+                任意的非HTML文本均为文本节点 文本节点一般都是元素节点的子节点 一般是通过元素节点获取文本节点
+
+        DOM文档操作
+            查找HTML元素
+            方法:
+                document.getElementById(id)         通过id查找元素
+                document.getElementByTagName(name)  通过标签名来查找元素
+                document.getElementByClassName(name)通过类名来查找元素
+                document.querySelector(CSS选择器)    通过css选择器选择一个元素
+                document.querySelectorAll(CSS选择器) 通过css选择器选择多个元素      
+            演示见09-13      
+
+            获取HTML的值
+            方法:
+            元素节点.innerText          获取HTML元素的innerText
+            元素节点.innerHTML          获取HTML元素的innerHTML
+            元素节点.属性               获取HTML元素的属性值
+            元素节点.getAttribute(attribute)获取HTML元素的属性值
+            元素节点.style.样式         获取HTML元素的行内样式
+            演示见14-17
+
+            改变HTML的值
+            方法：
+            元素节点.innerText = new text content       改变元素的innerText
+            元素节点.innerHTML = new html content       改变元素的innerHtml
+            元素节点.属性 = new value                   改变HTML的属性值
+            元素节点.setAttribute(attribute,value)      改变HTML的属性值
+            元素节点.style.样式 = new style             改变HTML的行内样式
+            演示见18-20
+
+            修改HTML元素
+            方法：
+            document.createElement(element)             创建HTML元素节点
+            document.createAttribute(attribute)         创建HTML属性节点
+            document.createTextNode(text)               创建HTML文本节点
+            元素节点.removeChild(element)                删除HTML元素
+            元素节点.appendChild(element)                添加HTML元素
+            元素节点.replaceChild(element)               替换HTML元素
+            元素节点.insertBefore(element)               在指定的子节点前面插入新的子节点
+            演示见21-23
+
+        DOM文档事件
+            事件概述
+                HTML事件可以触发浏览器中的行为,例如用户点击某个HTML元素时启动一段js
+                
+            窗口事件
+                由窗口行为触发该事件
+                属性        描述
+                onblur      当窗口失去焦点时运行脚本
+                onfucus     当窗口获得焦点时运行脚本
+                onload      当文档被加载后运行脚本
+                onresize    当调整窗口大小时运行脚本
+                onstorage   当web Strong区域更新时(存储空间中的数据发生变化时)运行脚本
+                演示见24
+
+            表单事件
+                由表单事件在HTML中触发
+                属性        描述
+                onblur	    当元素失去焦点时运行脚本。
+                onfocus	    当元素获得焦点时运行脚本。
+                onchange	当元素改变时运行脚本。
+                oninput	    当元素获得用户输入时运行脚本。
+                oninvalid	当元素无效时运行脚本。
+                onselect	当选取元素时运行脚本。
+                onsubmit	当提交表单时运行脚本。
+                演示见25
+            
+            键盘事件
+                通过键盘出发的事件
+                属性        描述
+                onkeydown	当按下按键时运行脚本。
+                onkeyup	    当松开按键时运行脚本。
+                onkeypress	当按下并松开按键时运行脚本。
+                演示见26 27
+            
+            鼠标事件
+                通过鼠标发出事件
+                属性        描述
+                onclick	    当单击鼠标时运行脚本。
+                ondblclick	当双击鼠标时运行脚本。
+                onmousedown	当按下鼠标按钮时运行脚本。
+                onmouseup	当松开鼠标按钮时运行脚本。
+                onmousemove	当鼠标指针移动时运行脚本。
+                onmouseover	当鼠标指针移至元素之上时运行脚本 不可以阻止冒泡。
+                onmouseout	当鼠标指针移出元素时运行脚本 不可以阻止冒泡。
+                onmouseenter当鼠标指针移至元素之上时运行脚本 可以阻止冒泡。
+                onmouseleave当鼠标指针移出元素时运行脚本 可以阻止冒泡。
+                onmousewheel当转动鼠标滚轮时运行脚本。
+                onscroll	当滚动元素的滚动条时运行脚本。
+                演示见28 29
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
